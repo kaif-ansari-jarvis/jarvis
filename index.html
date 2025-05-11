@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis - Jarvis AI Assistant</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Custom animations */
+        .animate-slideUp {
+            animation: slideUp 0.8s ease-in-out forwards;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Additional styles for smoother transitions */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-['Space_Grotesk'] overflow-x-hidden">
+    <!-- Header Navigation -->
+    <header class="bg-black text-white fixed w-full top-0 left-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="assets/icons/logo.png" alt="Jarvis Logo" class="h-20 w-auto transition-transform duration-300 hover:scale-105">
+                <a href="#" class="text-2xl font-bold text-white hover:text-gray-400 transition-all">Jarvis</a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-lg hover:text-gray-400 transition-all">Home</a>
+                <a href="#assistant" class="text-lg hover:text-gray-400 transition-all">Assistant</a>
+                <a href="#features" class="text-lg hover:text-gray-400 transition-all">Features</a>
+                <a href="#contact" class="text-lg hover:text-gray-400 transition-all">Contact</a>
+                <a href="xira_documentation.html" class="text-lg hover:text-gray-400 transition-all">Documentation</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="https://github.com/kaif-ansari-jarvis/jarvis-by-kaif-ansari" target="_blank" class="hidden md:inline-block px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-100 transition-all">
+                Meet Jarvis
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-black text-white p-5 absolute top-16 left-0 w-full hidden shadow-xl border-t border-gray-800">
+            <nav class="space-y-4">
+                <a href="#home" class="block text-lg hover:text-gray-400 transition-all">Home</a>
+                <a href="#assistant" class="block text-lg hover:text-gray-400 transition-all">Assistant</a>
+                <a href="#features" class="block text-lg hover:text-gray-400 transition-all">Features</a>
+                <a href="#contact" class="block text-lg hover:text-gray-400 transition-all">Contact</a>
+                <a href="https://github.com/kaif-ansari-jarvis/jarvis-by-kaif-ansari" target="_blank" class="block mt-6 text-center text-lg px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-100 transition-all">Join Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" title="Back to Top" class="fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-md backdrop-blur-md border border-white/10 bg-white/10 text-white text-xl hidden hover:scale-110 hover:bg-white/20 transition-all duration-300 ease-in-out">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="flex items-center justify-center h-screen bg-black relative">
+            <div class="absolute inset-0 bg-black opacity-80"></div>
+            <div class="text-center space-y-6 relative z-10 px-4">
+                <h1 class="hero-heading text-5xl md:text-6xl font-bold tracking-wider uppercase">Jarvis</h1>
+                <p class="text-lg md:text-2xl text-gray-300 font-light">Just A Rather Very Intelligent System</p>
+                <a href="https://github.com/kaif-ansari-jarvis/jarvis-by-kaif-ansari" target="_blank" class="cta-button inline-block px-8 py-4 bg-white text-black font-semibold text-xl rounded-full shadow-md hover:bg-gray-100 hover:scale-105 transition-all duration-300">
+                    Meet Jarvis
+                </a>
+            </div>
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-xl animate-bounce">
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </section>
+
+        <!-- Assistant Section -->
+        <section id="assistant" class="min-h-screen w-full bg-black flex items-center justify-center border-t border-gray-800 relative overflow-hidden py-20">
+            <div class="relative z-10 max-w-5xl text-center px-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-wider uppercase animate-slideUp">
+                    Meet The Assistant
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-200 leading-relaxed animate-slideUp" style="animation-delay: 0.3s;">
+                    Introducing <span class="text-[#00FFFF] font-semibold">Jarvis</span>, your personal AI assistant.
+                </p>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed mt-6 animate-slideUp" style="animation-delay: 0.4s;">
+                    Built to automate your PC, handle tasks, answer your queries, and learn as you interact with it.
+                </p>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed mt-6 animate-slideUp" style="animation-delay: 0.5s;">
+                    With voice recognition, face detection, and offline processing, <span class="text-[#00FFFF]">Jarvis</span> is more than just an assistant —
+                    it's a system that evolves with your needs, ensuring seamless and intelligent automation every time.
+                </p>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed mt-6 animate-slideUp" style="animation-delay: 0.6s;">
+                    Whether you're managing tasks, controlling your PC, or learning from your interactions,<br class="hidden md:block">
+                    <span class="text-[#00FFFF]">Jarvis</span> is here to make your world smarter and more efficient.
+                </p>
+
+                <div class="mt-12 h-1 bg-[#00FFFF] opacity-20 rounded-full w-2/3 mx-auto animate-pulse"></div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="min-h-screen w-full bg-black flex items-center justify-center border-t border-gray-800 relative overflow-hidden py-20">
+            <div class="relative z-10 max-w-5xl text-center px-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-wider uppercase animate-slideUp">
+                    Download Jarvis
+                </h2>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed animate-slideUp" style="animation-delay: 0.3s;">
+                    Ready to experience Jarvis on your PC? Download and install the most advanced AI assistant designed for complete automation and seamless control.
+                </p>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed mt-6 animate-slideUp" style="animation-delay: 0.4s;">
+                    With Jarvis, enjoy features like voice commands, facial recognition, AI-powered automation, and more, all while keeping your data private and offline.
+                </p>
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed mt-6 animate-slideUp" style="animation-delay: 0.5s;">
+                    Click the button below to get started with Jarvis and automate your digital life like never before!
+                </p>
+
+                <a href="download-link-to-jarvis-installer" class="inline-block bg-[#00FFFF] text-black px-6 py-3 text-xl font-semibold rounded-lg hover:bg-black hover:text-[#00FFFF] border border-[#00FFFF] transition-all mt-8 animate-slideUp" style="animation-delay: 0.6s;">
+                    Download Now
+                </a>
+
+                <div class="mt-12 h-1 bg-[#00FFFF] opacity-20 rounded-full w-2/3 mx-auto animate-pulse"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-center py-16 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <!-- Quick Links -->
+            <div class="flex flex-wrap justify-center gap-8 mb-8">
+                <a href="#home" class="text-lg font-medium transition-colors duration-300 hover:text-gray-400">Home</a>
+                <a href="#assistant" class="text-lg font-medium transition-colors duration-300 hover:text-gray-400">Assistant</a>
+                <a href="#features" class="text-lg font-medium transition-colors duration-300 hover:text-gray-400">Features</a>
+                <a href="#contact" class="text-lg font-medium transition-colors duration-300 hover:text-gray-400">Contact</a>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-telegram text-2xl"></i>
+                </a>
+                <a href="https://github.com/kaif-ansari-jarvis" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-gray-500 text-sm">
+                © 2025 Jarvis. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
